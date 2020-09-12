@@ -658,7 +658,7 @@ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size = 0.3)
 from sklearn.ensemble import IsolationForest
 
 scaler = StandardScaler()
-pca = PCA(n_components = 29) # We can play with this hyperparameter to see what effects have changing the dimensionality.
+pca = PCA(n_components = 29) # We can play with this hyperparameter to see what effects has changing the dimensionality.
 
 X_train = pca.fit_transform(X_train)
 X_train = scaler.fit_transform(X_train)
@@ -713,8 +713,8 @@ plt.ylabel("True labels")
 print()
 
 TPR = CM[1,1] / (CM[1,1] + CM[1,0] )
-train_f1_score = f1_score(y_val, y_pred_val_IF)
+validation_f1_score = f1_score(y_val, y_pred_val_IF)
 
 print("Validation TPR = ", TPR)
-print("Validation F1 score = ", train_f1_score)
+print("Validation F1 score = ", validation_f1_score)
 
